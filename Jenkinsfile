@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
@@ -20,5 +19,17 @@ pipeline {
                 sh "./mvnw.cmd clean package -e"
             }
         }
-    }
+        stage ('Run'){
+            steps
+                {
+                    echo 'TODO: run'
+                }
+        }
+        stage ('Clean'){
+            steps
+                {
+                    cleanWs()
+                }
+        }
+ }
 }
